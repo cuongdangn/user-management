@@ -1,0 +1,48 @@
+syntax = 'proto3';
+
+package message;
+
+option go_package = "./";
+
+message MessageRequest {
+    enum TypeRequest {
+        USERLOGIN = 0;
+        UPDATE_NICKNAME = 1;
+        GET_USERINFO = 2;
+    }
+    TypeRequest type = 1;
+    bytes content = 2;
+}
+
+message UserLoginReq {
+    string username = 1;
+    string password = 2;
+}
+
+message UserLoginRes {
+    int32 code = 1;
+    string message = 2;
+    string username = 3;
+    string nickname = 4;
+}
+
+message GetUserInfoReq {
+    string username = 1;
+}
+
+message GetUserInfoRes {
+    int32 code = 1;
+    string message = 2;
+    string username = 3;
+    string nickname = 4;
+}
+
+message UpdateNickNameReq {
+    string username = 1;
+    string nickname = 2;
+}
+
+message UpdateNickNameRes {
+    int32 code = 1;
+    string message = 2;
+}

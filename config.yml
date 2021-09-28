@@ -1,0 +1,28 @@
+# Web Server configurations
+web_server:
+  host: "localhost"
+  port: "1234"
+  tcp_client:
+    host: "localhost"
+    port: "1236"
+    num_conection: 1000
+
+# Core Server configurations
+core_server:
+  host: "localhost"
+  port: "1236"
+
+  # Database
+  database:
+    dbdriver : "mysql"
+    dbuser : "entrytask"
+    dbpass : "password"
+    dbname : "entrytask"
+
+  # Cache
+  redis:
+    host: "localhost"
+    port: "6379"
+    index: 0
+    pass : ""
+    expire_time : 24

@@ -1,0 +1,27 @@
+{{ define "Profile" }}
+  {{ template "Header" }}
+    <div class="container mt-5 d-flex justify-content-center" style = "border-radius: 10px">
+        <div class="p-3" style = "width: 400px;border: none;border-radius: 10px;background-color: #FFE4C4">
+            <div class="d-flex align-items-center">
+                <div class="image"> <img src="{{.Ava}}" class="rounded" width="155"> </div>
+                <div class="ml-3 w-100">
+                    <h4 class="mb-0 mt-0">Username: {{.Username}}</h4> <span>Nickname: {{.Nickname}}</span>
+                    <div class="p-2 mt-2 d-flex justify-content-between rounded  stats">
+                    <div class="d-flex flex-column"> <span style = "font-size: 10px;color: #a1aab9">Articles</span> <span style = "font-weight: 500">38</span> </div>
+                    <div class="d-flex flex-column"> <span style = "font-size: 10px;color: #a1aab9">Followers</span> <span  style = "font-weight: 500">980</span> </div>
+                    <div class="d-flex flex-column"> <span  style = "font-size: 10px;color: #a1aab9">Rating</span> <span  style = "font-weight: 500">8.9</span> </div>
+                </div>
+                    <div class="button mt-2 d-flex flex-row align-items-center"> 
+                        <form action="/edit/pictureprofile" method="GET">
+                            <button class="btn btn-sm btn-primary w-100" >Edit Profile</button> 
+                        </form>
+                        <form action="/edit/nickname" method="GET">
+                            <button class="btn btn-sm btn-primary w-100 ml-2">Edit nickname</button> 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  {{ template "Footer" }}
+{{ end }}
